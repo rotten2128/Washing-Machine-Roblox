@@ -28,11 +28,17 @@ button.Size = UDim2.new(0, 200, 0, 50)
 button.Text = "Start Spinning"
 button.Parent = draggableFrame
 
--- Create an "Increase Speed" button
+-- Create a button for increasing speed
 local increaseSpeedButton = Instance.new("TextButton")
-increaseSpeedButton.Size = UDim2.new(0, 200, 0, 50)
-increaseSpeedButton.Text = "Increase Speed"
+increaseSpeedButton.Size = UDim2.new(0, 50, 0, 50)
+increaseSpeedButton.Text = "+"
 increaseSpeedButton.Parent = draggableFrame
+
+-- Create a button for decreasing speed
+local decreaseSpeedButton = Instance.new("TextButton")
+decreaseSpeedButton.Size = UDim2.new(0, 50, 0, 50)
+decreaseSpeedButton.Text = "-"
+decreaseSpeedButton.Parent = draggableFrame
 
 -- Create a close button
 local closeButton = Instance.new("TextButton")
@@ -67,7 +73,13 @@ increaseSpeedButton.MouseButton1Click:Connect(function()
     -- Increase the max speed by a fixed amount (you can change this increment)
     maxSpinSpeed = math.min(maxSpinSpeed + 100, 9999)  -- Adjust increment as desired
     initialSpinSpeed = maxSpinSpeed  -- Set initial speed to max speed to begin the spin
-    increaseSpeedButton.Text = "Increase Speed (" .. maxSpinSpeed .. ")"
+end)
+
+-- Decrease spin speed
+decreaseSpeedButton.MouseButton1Click:Connect(function()
+    -- Decrease the max speed by a fixed amount (you can change this decrement)
+    maxSpinSpeed = math.max(maxSpinSpeed - 100, 0)  -- Adjust decrement as desired (ensure it doesn't go below 0)
+    initialSpinSpeed = maxSpinSpeed  -- Set initial speed to max speed to begin the spin
 end)
 
 closeButton.MouseButton1Click:Connect(function()
