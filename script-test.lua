@@ -2,8 +2,8 @@ local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
 
-local initialSpinSpeed = 1
-local maxSpinSpeed = 9999
+local initialSpinSpeed = 0  -- Start from 0
+local maxSpinSpeed = 0  -- Start with max spin at 0
 local accelerationRate = 0.009
 local spinning = false
 
@@ -11,10 +11,10 @@ local spinning = false
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = player:WaitForChild("PlayerGui")
 
--- Create a draggable frame
+-- Create a fixed frame in the center of the screen
 local draggableFrame = Instance.new("Frame")
-draggableFrame.Size = UDim2.new(0, 200, 0, 150)
-draggableFrame.Position = UDim2.new(0.5, -100, 0.8, -75)
+draggableFrame.Size = UDim2.new(0, 200, 0, 200)
+draggableFrame.Position = UDim2.new(0.5, -100, 0.5, -100)  -- Position it in the center
 draggableFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 draggableFrame.Parent = screenGui
 
@@ -22,53 +22,23 @@ draggableFrame.Parent = screenGui
 local listLayout = Instance.new("UIListLayout")
 listLayout.Parent = draggableFrame
 
--- Create a button
+-- Create a button for starting the spin
 local button = Instance.new("TextButton")
 button.Size = UDim2.new(0, 200, 0, 50)
 button.Text = "Start Spinning"
 button.Parent = draggableFrame
+
+-- Create an "Increase Speed" button
+local increaseSpeedButton = Instance.new("TextButton")
+increaseSpeedButton.Size = UDim2.new(0, 200, 0, 50)
+increaseSpeedButton.Text = "Increase Speed"
+increaseSpeedButton.Parent = draggableFrame
 
 -- Create a close button
 local closeButton = Instance.new("TextButton")
 closeButton.Size = UDim2.new(0, 100, 0, 50)
 closeButton.Text = "Close"
 closeButton.Parent = draggableFrame
-
--- Variables for dragging the frame
-local dragInput, dragStart, startPos
-local dragging = false
-
--- Function to update the frame's position
-local function update(input)
-    if dragging then
-        local delta = input.Position - dragStart
-        draggableFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-    end
-end
-
--- Function to handle the beginning of the drag
-local function onInputBegan(input)
-    -- Only allow dragging if the user clicks on the frame itself (not the buttons)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 and input.Target == draggableFrame then
-        dragging = true
-        dragStart = input.Position
-        startPos = draggableFrame.Position
-        input.Changed:Connect(function()
-            update(input)
-        end)
-    end
-end
-
--- Function to stop dragging when the mouse is released
-local function onInputEnded(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        dragging = false
-    end
-end
-
--- Connecting the input to allow dragging the frame
-draggableFrame.InputBegan:Connect(onInputBegan)
-draggableFrame.InputEnded:Connect(onInputEnded)
 
 local function spinCharacter()
     local spinSpeed = initialSpinSpeed
@@ -90,6 +60,14 @@ button.MouseButton1Click:Connect(function()
         button.Text = "Stop Spinning"
         spinCharacter()
     end
+end)
+
+-- Increase spin speed
+increaseSpeedButton.MouseButton1Click:Connect(function()
+    -- Increase the max speed by a fixed amount (you can change this increment)
+    maxSpinSpeed = math.min(maxSpinSpeed + 100, 9999)  -- Adjust increment as desired
+    initialSpinSpeed = maxSpinSpeed  -- Set initial speed to max speed to begin the spin
+    increaseSpeedButton.Text = "Increase Speed (" .. maxSpinSpeed .. ")"
 end)
 
 closeButton.MouseButton1Click:Connect(function()
