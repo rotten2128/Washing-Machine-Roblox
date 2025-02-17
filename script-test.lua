@@ -36,7 +36,7 @@ closeButton.Parent = draggableFrame
 
 -- Variables for dragging the frame
 local dragInput, dragStart, startPos
-local dragging = false  -- To keep track of dragging state
+local dragging = false
 
 -- Function to update the frame's position
 local function update(input)
@@ -48,7 +48,8 @@ end
 
 -- Function to handle the beginning of the drag
 local function onInputBegan(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 and draggableFrame:FindFirstChild(input.Target.Name) == nil then
+    -- Only allow dragging if the user clicks on the frame itself (not the buttons)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 and input.Target == draggableFrame then
         dragging = true
         dragStart = input.Position
         startPos = draggableFrame.Position
