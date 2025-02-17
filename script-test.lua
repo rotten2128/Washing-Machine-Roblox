@@ -13,7 +13,7 @@ screenGui.Parent = player:WaitForChild("PlayerGui")
 
 -- Create a smaller frame at the bottom of the screen
 local draggableFrame = Instance.new("Frame")
-draggableFrame.Size = UDim2.new(0, 200, 0, 100)  -- Smaller size
+draggableFrame.Size = UDim2.new(0, 100, 0, 50)  -- Smaller size
 draggableFrame.Position = UDim2.new(0.5, -100, 1, -120)  -- Positioned at the bottom of the screen, with a small margin
 draggableFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 draggableFrame.Parent = screenGui
