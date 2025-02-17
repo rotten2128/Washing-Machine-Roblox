@@ -34,17 +34,40 @@ closeButton.Size = UDim2.new(0, 100, 0, 50)
 closeButton.Text = "Close"
 closeButton.Parent = draggableFrame
 
--- Function to follow the mouse position when clicked inside the frame
-local function followMouse(input)
-    local mousePos = input.Position
-    draggableFrame.Position = UDim2.new(0, mousePos.X, 0, mousePos.Y)
+-- Variables for dragging the frame
+local dragInput, dragStart, startPos
+local dragging = false  -- To keep track of dragging state
+
+-- Function to update the frame's position
+local function update(input)
+    if dragging then
+        local delta = input.Position - dragStart
+        draggableFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
 end
 
--- Connect the MouseButton1Click event to follow the mouse
-draggableFrame.MouseButton1Click:Connect(function()
-    local mouse = player:GetMouse()
-    mouse.Move:Connect(followMouse)
-end)
+-- Function to handle the beginning of the drag
+local function onInputBegan(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 and draggableFrame:FindFirstChild(input.Target.Name) == nil then
+        dragging = true
+        dragStart = input.Position
+        startPos = draggableFrame.Position
+        input.Changed:Connect(function()
+            update(input)
+        end)
+    end
+end
+
+-- Function to stop dragging when the mouse is released
+local function onInputEnded(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = false
+    end
+end
+
+-- Connecting the input to allow dragging the frame
+draggableFrame.InputBegan:Connect(onInputBegan)
+draggableFrame.InputEnded:Connect(onInputEnded)
 
 local function spinCharacter()
     local spinSpeed = initialSpinSpeed
