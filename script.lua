@@ -4,7 +4,7 @@ local humanoid = character:WaitForChild("Humanoid")
 
 local initialSpinSpeed = 1
 local maxSpinSpeed = 9000000
-local accelerationRate = 0.01
+local accelerationRate = 0.0001
 local spinning = false
 
 -- Create a ScreenGui
