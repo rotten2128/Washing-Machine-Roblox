@@ -34,24 +34,17 @@ closeButton.Size = UDim2.new(0, 100, 0, 50)
 closeButton.Text = "Close"
 closeButton.Parent = draggableFrame
 
--- Make the frame draggable
-local dragInput, dragStart, startPos
-local function update(input)
-    local delta = input.Position - dragStart
-    draggableFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+-- Function to follow the mouse position when clicked inside the frame
+local function followMouse(input)
+    local mousePos = input.Position
+    draggableFrame.Position = UDim2.new(0, mousePos.X, 0, mousePos.Y)
 end
 
-local function onInputBegan(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        dragStart = input.Position
-        startPos = draggableFrame.Position
-        input.Changed:Connect(function()
-            update(input)
-        end)
-    end
-end
-
-draggableFrame.InputBegan:Connect(onInputBegan)
+-- Connect the MouseButton1Click event to follow the mouse
+draggableFrame.MouseButton1Click:Connect(function()
+    local mouse = player:GetMouse()
+    mouse.Move:Connect(followMouse)
+end)
 
 local function spinCharacter()
     local spinSpeed = initialSpinSpeed
