@@ -11,10 +11,10 @@ local spinning = false
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = player:WaitForChild("PlayerGui")
 
--- Create a fixed frame in the center of the screen
+-- Create a fixed frame at the bottom of the screen, with a smaller size
 local draggableFrame = Instance.new("Frame")
-draggableFrame.Size = UDim2.new(0, 200, 0, 200)
-draggableFrame.Position = UDim2.new(0.5, -100, 0.5, -100)  -- Position it in the center
+draggableFrame.Size = UDim2.new(0, 200, 0, 120)  -- Smaller size
+draggableFrame.Position = UDim2.new(0.5, -100, 1, -150)  -- Positioned at the bottom of the screen
 draggableFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 draggableFrame.Parent = screenGui
 
@@ -24,25 +24,25 @@ listLayout.Parent = draggableFrame
 
 -- Create a button for starting the spin
 local button = Instance.new("TextButton")
-button.Size = UDim2.new(0, 200, 0, 50)
+button.Size = UDim2.new(0, 200, 0, 40)
 button.Text = "Start Spinning"
 button.Parent = draggableFrame
 
 -- Create a button for increasing speed
 local increaseSpeedButton = Instance.new("TextButton")
-increaseSpeedButton.Size = UDim2.new(0, 50, 0, 50)
+increaseSpeedButton.Size = UDim2.new(0, 50, 0, 40)
 increaseSpeedButton.Text = "+"
 increaseSpeedButton.Parent = draggableFrame
 
 -- Create a button for decreasing speed
 local decreaseSpeedButton = Instance.new("TextButton")
-decreaseSpeedButton.Size = UDim2.new(0, 50, 0, 50)
+decreaseSpeedButton.Size = UDim2.new(0, 50, 0, 40)
 decreaseSpeedButton.Text = "-"
 decreaseSpeedButton.Parent = draggableFrame
 
 -- Create a close button
 local closeButton = Instance.new("TextButton")
-closeButton.Size = UDim2.new(0, 100, 0, 50)
+closeButton.Size = UDim2.new(0, 100, 0, 40)
 closeButton.Text = "Close"
 closeButton.Parent = draggableFrame
 
