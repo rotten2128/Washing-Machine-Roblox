@@ -11,12 +11,17 @@ local spinning = false
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = player:WaitForChild("PlayerGui")
 
--- Create a smaller frame at the bottom of the screen
+-- Create a frame at the bottom of the screen with increased height and black background
 local draggableFrame = Instance.new("Frame")
-draggableFrame.Size = UDim2.new(0, 200, 0, 100)  -- Smaller size
-draggableFrame.Position = UDim2.new(0.5, -100, 1, -120)  -- Positioned at the bottom of the screen, with a small margin
-draggableFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+draggableFrame.Size = UDim2.new(0, 200, 0, 130)  -- Increased height by 30 pixels
+draggableFrame.Position = UDim2.new(0.5, -100, 1, -150)  -- Positioned at the bottom of the screen
+draggableFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)  -- Set background to black
+draggableFrame.BackgroundTransparency = 0.2  -- Slight transparency to make it more subtle
 draggableFrame.Parent = screenGui
+
+-- Make the frame corners rounded
+draggableFrame.UICorner = Instance.new("UICorner")
+draggableFrame.UICorner.CornerRadius = UDim.new(0, 12)  -- Rounded corners
 
 -- Add a UIListLayout for buttons within the frame
 local listLayout = Instance.new("UIListLayout")
@@ -27,25 +32,49 @@ listLayout.Padding = UDim.new(0, 5)  -- Adds some space between buttons
 local button = Instance.new("TextButton")
 button.Size = UDim2.new(0, 200, 0, 30)
 button.Text = "Start Spinning"
+button.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
+button.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
 button.Parent = draggableFrame
+
+-- Make the button corners rounded
+button.UICorner = Instance.new("UICorner")
+button.UICorner.CornerRadius = UDim.new(0, 8)  -- Rounded corners for the button
 
 -- Create a button for increasing speed
 local increaseSpeedButton = Instance.new("TextButton")
 increaseSpeedButton.Size = UDim2.new(0, 50, 0, 30)
 increaseSpeedButton.Text = "+"
+increaseSpeedButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
+increaseSpeedButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
 increaseSpeedButton.Parent = draggableFrame
+
+-- Make the increase speed button corners rounded
+increaseSpeedButton.UICorner = Instance.new("UICorner")
+increaseSpeedButton.UICorner.CornerRadius = UDim.new(0, 8)  -- Rounded corners
 
 -- Create a button for decreasing speed
 local decreaseSpeedButton = Instance.new("TextButton")
 decreaseSpeedButton.Size = UDim2.new(0, 50, 0, 30)
 decreaseSpeedButton.Text = "-"
+decreaseSpeedButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
+decreaseSpeedButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
 decreaseSpeedButton.Parent = draggableFrame
+
+-- Make the decrease speed button corners rounded
+decreaseSpeedButton.UICorner = Instance.new("UICorner")
+decreaseSpeedButton.UICorner.CornerRadius = UDim.new(0, 8)  -- Rounded corners
 
 -- Create a close button
 local closeButton = Instance.new("TextButton")
 closeButton.Size = UDim2.new(0, 100, 0, 30)
 closeButton.Text = "Close"
+closeButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
 closeButton.Parent = draggableFrame
+
+-- Make the close button corners rounded
+closeButton.UICorner = Instance.new("UICorner")
+closeButton.UICorner.CornerRadius = UDim.new(0, 8)  -- Rounded corners
 
 local function spinCharacter()
     local spinSpeed = initialSpinSpeed
