@@ -31,9 +31,10 @@ titleLabel.Position = UDim2.new(0, 0, 0, 0)
 titleLabel.Text = "Spin GUI v1"
 titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
 titleLabel.BackgroundTransparency = 1  -- Transparent background
-titleLabel.Font = Enum.Font.SourceSans  -- Comic Sans is SourceSans in Roblox
+titleLabel.Font = Enum.Font.SourceSans  -- Comic Sans font
 titleLabel.TextSize = 18
-titleLabel.TextAlign = Enum.TextAlignment.Center
+titleLabel.TextXAlignment = Enum.TextXAlignment.Center  -- Correct alignment property
+titleLabel.TextYAlignment = Enum.TextYAlignment.Center  -- Correct alignment property
 titleLabel.Parent = draggableFrame
 
 -- Create a button for starting the spin
@@ -102,14 +103,14 @@ end)
 increaseSpeedButton.MouseButton1Click:Connect(function()
     -- Increase the max speed by 10
     maxSpinSpeed = math.min(maxSpinSpeed + 10, 9999)  -- Adjust increment to 10
-    print(maxSpinSpeed)
+    initialSpinSpeed = maxSpinSpeed  -- Set initial speed to max speed to begin the spin
 end)
 
 -- Decrease spin speed by 10
 decreaseSpeedButton.MouseButton1Click:Connect(function()
     -- Decrease the max speed by 10
     maxSpinSpeed = math.max(maxSpinSpeed - 10, 0)  -- Adjust decrement to 10 (ensure it doesn't go below 0)
-    print(maxSpinSpeed)
+    initialSpinSpeed = maxSpinSpeed  -- Set initial speed to max speed to begin the spin
 end)
 
 closeButton.MouseButton1Click:Connect(function()
