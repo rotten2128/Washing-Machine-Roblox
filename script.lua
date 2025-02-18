@@ -72,7 +72,7 @@ closeButton.TextSize = 14
 closeButton.Parent = draggableFrame
 
 local function updateSpeedText()
-    speedTextLabel.Text = "Spin Speed: " .. maxSpinSpeed
+    speedTextLabel.Text = "SpinGui V1\nSpin Speed: " .. maxSpinSpeed
 end
 
 local function spinCharacter()
