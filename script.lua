@@ -7,7 +7,7 @@ local initialSpinSpeed = 0  -- Start from 0
 local maxSpinSpeed = 0  -- Start with max spin at 0
 local accelerationRate = 0.2  -- Acceleration set
 local spinning = false
-
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("This spin script was made by stickk.")
 -- Create a ScreenGui
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = player:WaitForChild("PlayerGui")
@@ -92,8 +92,10 @@ button.MouseButton1Click:Connect(function()
     if spinning then
         spinning = false
         button.Text = "Start Spinning"
+        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Washer started load.")
     else
         button.Text = "Stop Spinning"
+        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Washer load stopped or cancelled.")
         spinCharacter()
     end
 end)
