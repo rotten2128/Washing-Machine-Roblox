@@ -24,12 +24,26 @@ local listLayout = Instance.new("UIListLayout")
 listLayout.Parent = draggableFrame
 listLayout.Padding = UDim.new(0, 5)  -- Adds some space between buttons
 
+-- Create a title label at the top of the frame
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Size = UDim2.new(0, 200, 0, 30)
+titleLabel.Position = UDim2.new(0, 0, 0, 0)
+titleLabel.Text = "Spin GUI v1"
+titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
+titleLabel.BackgroundTransparency = 1  -- Transparent background
+titleLabel.Font = Enum.Font.SourceSans  -- Comic Sans is SourceSans in Roblox
+titleLabel.TextSize = 18
+titleLabel.TextAlign = Enum.TextAlignment.Center
+titleLabel.Parent = draggableFrame
+
 -- Create a button for starting the spin
 local button = Instance.new("TextButton")
 button.Size = UDim2.new(0, 200, 0, 30)
 button.Text = "Start Spinning"
 button.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
 button.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
+button.Font = Enum.Font.SourceSans  -- Comic Sans font
+button.TextSize = 14
 button.Parent = draggableFrame
 
 -- Create a button for increasing speed
@@ -38,6 +52,8 @@ increaseSpeedButton.Size = UDim2.new(0, 50, 0, 30)
 increaseSpeedButton.Text = "+"
 increaseSpeedButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
 increaseSpeedButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
+increaseSpeedButton.Font = Enum.Font.SourceSans  -- Comic Sans font
+increaseSpeedButton.TextSize = 14
 increaseSpeedButton.Parent = draggableFrame
 
 -- Create a button for decreasing speed
@@ -46,6 +62,8 @@ decreaseSpeedButton.Size = UDim2.new(0, 50, 0, 30)
 decreaseSpeedButton.Text = "-"
 decreaseSpeedButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
 decreaseSpeedButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
+decreaseSpeedButton.Font = Enum.Font.SourceSans  -- Comic Sans font
+decreaseSpeedButton.TextSize = 14
 decreaseSpeedButton.Parent = draggableFrame
 
 -- Create a close button
@@ -54,6 +72,8 @@ closeButton.Size = UDim2.new(0, 100, 0, 30)
 closeButton.Text = "Close"
 closeButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
 closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
+closeButton.Font = Enum.Font.SourceSans  -- Comic Sans font
+closeButton.TextSize = 14
 closeButton.Parent = draggableFrame
 
 local function spinCharacter()
@@ -78,17 +98,17 @@ button.MouseButton1Click:Connect(function()
     end
 end)
 
--- Increase spin speed
+-- Increase spin speed by 10
 increaseSpeedButton.MouseButton1Click:Connect(function()
-    -- Increase the max speed by a fixed amount (you can change this increment)
-    maxSpinSpeed = math.min(maxSpinSpeed + 100, 9999)  -- Adjust increment as desired
+    -- Increase the max speed by 10
+    maxSpinSpeed = math.min(maxSpinSpeed + 10, 9999)  -- Adjust increment to 10
     initialSpinSpeed = maxSpinSpeed  -- Set initial speed to max speed to begin the spin
 end)
 
--- Decrease spin speed
+-- Decrease spin speed by 10
 decreaseSpeedButton.MouseButton1Click:Connect(function()
-    -- Decrease the max speed by a fixed amount (you can change this decrement)
-    maxSpinSpeed = math.max(maxSpinSpeed - 100, 0)  -- Adjust decrement as desired (ensure it doesn't go below 0)
+    -- Decrease the max speed by 10
+    maxSpinSpeed = math.max(maxSpinSpeed - 10, 0)  -- Adjust decrement to 10 (ensure it doesn't go below 0)
     initialSpinSpeed = maxSpinSpeed  -- Set initial speed to max speed to begin the spin
 end)
 
