@@ -82,18 +82,14 @@ button.MouseButton1Click:Connect(function()
     end
 end)
 
--- Increase spin speed by 10
 increaseSpeedButton.MouseButton1Click:Connect(function()
-    -- Increase the max speed by 10
-    maxSpinSpeed = math.min(maxSpinSpeed + 10, 9999)  -- Adjust increment to 10
-    initialSpinSpeed = maxSpinSpeed  -- Set initial speed to max speed to begin the spin
+    maxSpinSpeed = math.min(maxSpinSpeed + 5, 9999)  -- Adjust increment (no below 0)
+    print(maxSpinSpeed)
 end)
 
--- Decrease spin speed by 10
 decreaseSpeedButton.MouseButton1Click:Connect(function()
-    -- Decrease the max speed by 10
-    maxSpinSpeed = math.max(maxSpinSpeed - 10, 0)  -- Adjust decrement to 10 (ensure it doesn't go below 0)
-    initialSpinSpeed = maxSpinSpeed  -- Set initial speed to max speed to begin the spin
+    maxSpinSpeed = math.max(maxSpinSpeed - 5, 0)  -- Adjust decrement (ensure it doesn't go below 0)
+    print(maxSpinSpeed)
 end)
 
 closeButton.MouseButton1Click:Connect(function()
