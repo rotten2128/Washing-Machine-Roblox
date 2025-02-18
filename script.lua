@@ -112,10 +112,3 @@ closeButton.MouseButton1Click:Connect(function()
     spinning = false
     screenGui:Destroy()
 end)
-
--- Detect if the player dies and re-add the UI
-player.CharacterAdded:Connect(function(character)
-    -- Wait for the character to load and then recreate the UI
-    wait(1)  -- Short delay to allow for character loading
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/rotten2128/stickks-spin-gui-roblox-script/refs/heads/main/script.lua'), true))()  -- Recreate the UI
-end)
