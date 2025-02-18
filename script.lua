@@ -22,7 +22,7 @@ draggableFrame.Parent = screenGui
 -- Create a speed display TextLabel (outside the frame)
 local speedTextLabel = Instance.new("TextLabel")
 speedTextLabel.Size = UDim2.new(0, 200, 0, 60)
-speedTextLabel.Position = UDim2.new(0.5, -100, 1, -220) -- Position above the frame
+speedTextLabel.Position = UDim2.new(0.5, -100, 1, -205) -- Position above the frame
 speedTextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)  -- Set background to black
 speedTextLabel.BackgroundTransparency = 0.2
 speedTextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
