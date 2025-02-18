@@ -92,10 +92,10 @@ button.MouseButton1Click:Connect(function()
     if spinning then
         spinning = false
         button.Text = "Start Spinning"
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Washer started load.")
+        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Washer load stopped or cancelled.")
     else
         button.Text = "Stop Spinning"
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Washer load stopped or cancelled.")
+        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Washer started load.")
         spinCharacter()
     end
 end)
