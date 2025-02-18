@@ -33,8 +33,6 @@ titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
 titleLabel.BackgroundTransparency = 1  -- Transparent background
 titleLabel.Font = Enum.Font.SourceSans  -- Comic Sans font
 titleLabel.TextSize = 18
-titleLabel.TextXAlignment = Enum.TextXAlignment.Center  -- Correct alignment property
-titleLabel.TextYAlignment = Enum.TextYAlignment.Center  -- Correct alignment property
 titleLabel.Parent = draggableFrame
 
 -- Create a button for starting the spin
