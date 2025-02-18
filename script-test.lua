@@ -75,9 +75,11 @@ end
 button.MouseButton1Click:Connect(function()
     if spinning then
         spinning = false
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Wash stopped.", "All")
         button.Text = "Start Spinning"
     else
         button.Text = "Stop Spinning"
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Wash started.", "All")
         spinCharacter()
     end
 end)
