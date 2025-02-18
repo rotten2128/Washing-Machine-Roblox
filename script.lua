@@ -24,25 +24,13 @@ local listLayout = Instance.new("UIListLayout")
 listLayout.Parent = draggableFrame
 listLayout.Padding = UDim.new(0, 5)  -- Adds some space between buttons
 
--- Create a title label at the top of the frame
-local titleLabel = Instance.new("TextLabel")
-titleLabel.Size = UDim2.new(0, 200, 0, 30)
-titleLabel.Position = UDim2.new(0, 0, 0, 0)
-titleLabel.Text = "Spin GUI v1"
-titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
-titleLabel.BackgroundTransparency = 1  -- Transparent background
-titleLabel.Font = "SourceSans"  -- Comic Sans font
-titleLabel.TextSize = 18
-titleLabel.TextAlign = "Center"  -- Center alignment for text
-titleLabel.Parent = draggableFrame
-
 -- Create a button for starting the spin
 local button = Instance.new("TextButton")
 button.Size = UDim2.new(0, 200, 0, 30)
 button.Text = "Start Spinning"
 button.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
 button.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
-button.Font = "SourceSans"  -- Comic Sans font
+button.Font = Enum.Font.SourceSans  -- Correct way to set font
 button.TextSize = 14
 button.Parent = draggableFrame
 
@@ -52,7 +40,7 @@ increaseSpeedButton.Size = UDim2.new(0, 50, 0, 30)
 increaseSpeedButton.Text = "+"
 increaseSpeedButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
 increaseSpeedButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
-increaseSpeedButton.Font = "SourceSans"  -- Comic Sans font
+increaseSpeedButton.Font = Enum.Font.SourceSans  -- Correct way to set font
 increaseSpeedButton.TextSize = 14
 increaseSpeedButton.Parent = draggableFrame
 
@@ -62,7 +50,7 @@ decreaseSpeedButton.Size = UDim2.new(0, 50, 0, 30)
 decreaseSpeedButton.Text = "-"
 decreaseSpeedButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
 decreaseSpeedButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
-decreaseSpeedButton.Font = "SourceSans"  -- Comic Sans font
+decreaseSpeedButton.Font = Enum.Font.SourceSans  -- Correct way to set font
 decreaseSpeedButton.TextSize = 14
 decreaseSpeedButton.Parent = draggableFrame
 
@@ -72,7 +60,7 @@ closeButton.Size = UDim2.new(0, 100, 0, 30)
 closeButton.Text = "Close"
 closeButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
 closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
-closeButton.Font = "SourceSans"  -- Comic Sans font
+closeButton.Font = Enum.Font.SourceSans  -- Correct way to set font
 closeButton.TextSize = 14
 closeButton.Parent = draggableFrame
 
