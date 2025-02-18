@@ -31,8 +31,9 @@ titleLabel.Position = UDim2.new(0, 0, 0, 0)
 titleLabel.Text = "Spin GUI v1"
 titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
 titleLabel.BackgroundTransparency = 1  -- Transparent background
-titleLabel.Font = Enum.Font.SourceSans  -- Comic Sans font
+titleLabel.Font = "SourceSans"  -- Comic Sans font
 titleLabel.TextSize = 18
+titleLabel.TextAlign = "Center"  -- Center alignment for text
 titleLabel.Parent = draggableFrame
 
 -- Create a button for starting the spin
@@ -41,7 +42,7 @@ button.Size = UDim2.new(0, 200, 0, 30)
 button.Text = "Start Spinning"
 button.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
 button.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
-button.Font = Enum.Font.SourceSans  -- Comic Sans font
+button.Font = "SourceSans"  -- Comic Sans font
 button.TextSize = 14
 button.Parent = draggableFrame
 
@@ -51,7 +52,7 @@ increaseSpeedButton.Size = UDim2.new(0, 50, 0, 30)
 increaseSpeedButton.Text = "+"
 increaseSpeedButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
 increaseSpeedButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
-increaseSpeedButton.Font = Enum.Font.SourceSans  -- Comic Sans font
+increaseSpeedButton.Font = "SourceSans"  -- Comic Sans font
 increaseSpeedButton.TextSize = 14
 increaseSpeedButton.Parent = draggableFrame
 
@@ -61,7 +62,7 @@ decreaseSpeedButton.Size = UDim2.new(0, 50, 0, 30)
 decreaseSpeedButton.Text = "-"
 decreaseSpeedButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
 decreaseSpeedButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
-decreaseSpeedButton.Font = Enum.Font.SourceSans  -- Comic Sans font
+decreaseSpeedButton.Font = "SourceSans"  -- Comic Sans font
 decreaseSpeedButton.TextSize = 14
 decreaseSpeedButton.Parent = draggableFrame
 
@@ -71,7 +72,7 @@ closeButton.Size = UDim2.new(0, 100, 0, 30)
 closeButton.Text = "Close"
 closeButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)  -- Grey background for the button
 closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
-closeButton.Font = Enum.Font.SourceSans  -- Comic Sans font
+closeButton.Font = "SourceSans"  -- Comic Sans font
 closeButton.TextSize = 14
 closeButton.Parent = draggableFrame
 
