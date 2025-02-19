@@ -28,7 +28,7 @@ speedTextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)  -- Set background to 
 speedTextLabel.BackgroundTransparency = 0.2
 speedTextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 speedTextLabel.TextSize = 14
-speedTextLabel.Text = "Spin Gui V1\nSpin Speed: " .. maxSpinSpeed
+speedTextLabel.Text = "Spin Gui\nSpin Speed: " .. maxSpinSpeed
 speedTextLabel.Parent = screenGui
 
 -- Add a UIListLayout for buttons within the frame
@@ -73,7 +73,7 @@ closeButton.TextSize = 14
 closeButton.Parent = draggableFrame
 
 local function updateSpeedText()
-    speedTextLabel.Text = "Spin Gui V1\nSpin Speed: " .. maxSpinSpeed
+    speedTextLabel.Text = "Spin Gui\nSpin Speed: " .. maxSpinSpeed
 end
 
 local function spinCharacter()
