@@ -6,7 +6,7 @@
 
 -- cl1ents - Arm solver
 
--- This loads sauceVR
+-- This loads sauceVR with the "loadvr" command in my admin menu.
 
 loadstring(
 	game:HttpGetAsync("https://raw.githubusercontent.com/saucekid/sauceVR/main/package.lua")
