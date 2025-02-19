@@ -11,6 +11,7 @@ local spinning = false
 -- Create a ScreenGui
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = player:WaitForChild("PlayerGui")
+screenGui.ResetOnSpawn = false -- Keeps the GUI after death
 
 -- Create a frame at the bottom of the screen with increased height and black background
 local draggableFrame = Instance.new("Frame")
