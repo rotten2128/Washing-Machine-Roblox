@@ -25,7 +25,7 @@ textBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 textBox.PlaceholderText = "Enter command..."
 textBox.TextScaled = true
 textBox.Parent = frame
-
+textBox.Text = "Enter command..."
 -- Submit Button
 local submitButton = Instance.new("TextButton")
 submitButton.Size = UDim2.new(0.8, 0, 0.3, 0)
