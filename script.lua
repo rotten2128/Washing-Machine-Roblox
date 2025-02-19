@@ -59,7 +59,7 @@ local function executeCommand(command)
         player.Character:BreakJoints()
     elseif command == "clearchat" then
         local str = " "
-        local repeatedStr = string.rep(str, 1000)
+        local repeatedStr = string.rep(str, 500)
         game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("x" .. repeatedStr .. "[System]: Chat Cleared.")
     elseif command == "spingui" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/rotten2128/stickks-admin/refs/heads/main/Command%20Scripts/spin%20gui.lua"))()
