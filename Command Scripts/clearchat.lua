@@ -347,4 +347,4 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("x
   
   
   
-[System_Stickk's_Admin]: Chat Cleared")
+[Stickk's Admin]: Chat Cleared.")
