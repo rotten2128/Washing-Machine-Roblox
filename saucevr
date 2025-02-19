@@ -1,0 +1,13 @@
+-- credits to these three:
+
+-- TheNexusAvenger - NexusVR
+
+-- richie0866 - Rostruct
+
+-- cl1ents - Arm solver
+
+-- This loads sauceVR
+
+loadstring(
+	game:HttpGetAsync("https://raw.githubusercontent.com/saucekid/sauceVR/main/package.lua")
+)()
