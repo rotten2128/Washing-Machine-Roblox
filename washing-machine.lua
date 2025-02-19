@@ -7,7 +7,7 @@ local initialSpinSpeed = 0  -- Start from 0
 local maxSpinSpeed = 0  -- Start with max spin at 0
 local accelerationRate = 0.2  -- Acceleration set
 local spinning = false
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("T>h>i>s s>p>i>n s>c>r>ip>t w>a>s> m>a>d>e b>y s>t>i>c>k>k>.")
+
 -- Create a ScreenGui
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = player:WaitForChild("PlayerGui")
