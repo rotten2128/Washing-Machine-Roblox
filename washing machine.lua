@@ -1,7 +1,7 @@
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
-
+-- script made by stickk (@Ooffingblox_234)
 
 local initialSpinSpeed = 0  -- Start from 0
 local maxSpinSpeed = 0  -- Start with max spin at 0
