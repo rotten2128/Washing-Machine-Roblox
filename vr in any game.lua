@@ -1,7 +1,8 @@
 local player = game.Players.LocalPlayer
 local vrService = game:GetService("VRService")
 local runService = game:GetService("RunService")
-
+-- need to test idk if it works
+-- script made by stickk (@Ooffingblox_234)
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
 local head = character:WaitForChild("Head")
