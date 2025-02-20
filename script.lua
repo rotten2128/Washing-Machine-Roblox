@@ -47,8 +47,8 @@ local function executeCommand(command)
     local humanoid = getHumanoid()
     if not humanoid then return end -- If no humanoid, stop execution
 
-    if command == "kill" then
-        humanoid.Health = 0
+    if command == "heal" then
+        humanoid.Health = 100
     elseif command == "jump" then
         humanoid.Jump = true
     elseif command == "unspeed" then
