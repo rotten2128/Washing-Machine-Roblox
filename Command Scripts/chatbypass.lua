@@ -49,7 +49,7 @@ minimizeButton.Parent = screenGui -- Parent it to ScreenGui so it stays visible
 
 local function transformString(str)
     local lowerStr = str:lower()
-    return lowerStr:sub(1,1) .. upperStr:sub(2, -2):gsub(".", "%1>") .. upperStr:sub(-1)
+    return lowerStr:sub(1,1) .. lowerStr:sub(2, -2):gsub(".", "%1>") .. lowerStr:sub(-1)
 end
 
 -- Function to handle text submission
