@@ -57,14 +57,12 @@ local function executeCommand(command)
         humanoid.WalkSpeed = 50
     elseif command == "reset" then
         player.Character:BreakJoints()
-    elseif command == "clearchat" then
-        local str = " "
-        local repeatedStr = string.rep(str, 500)
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("x" .. repeatedStr .. "[System]: Chat Cleared.")
     elseif command == "spingui" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/rotten2128/stickks-admin/refs/heads/main/Command%20Scripts/spin%20gui.lua"))()
     elseif command == "vr" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/rotten2128/stickks-admin/refs/heads/main/Command%20Scripts/saucevr.lua"))
+    elseif command == "chatbypass" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/rotten2128/stickks-admin/refs/heads/main/Command%20Scripts/chatbypass.lua"))() 
     else
         -- Show unknown command in red
         textBox.TextColor3 = Color3.fromRGB(255, 0, 0) -- Red text
