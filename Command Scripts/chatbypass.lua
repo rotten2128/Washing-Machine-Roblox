@@ -10,6 +10,7 @@ local playerGui = player:WaitForChild("PlayerGui")
 -- Create ScreenGui
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = playerGui
+screenGui.ResetOnSpawn = false -- Keeps GUI after death
 
 
 -- Create MainFrame (UI Panel)
