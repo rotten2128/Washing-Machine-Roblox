@@ -1,9 +1,15 @@
 local player = game.Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
+-- chat as script idk:
+
+-- game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("")
+
+
 -- Create ScreenGui
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = playerGui
+
 
 -- Create MainFrame (UI Panel)
 local mainFrame = Instance.new("Frame")
@@ -18,7 +24,9 @@ local textBox = Instance.new("TextBox")
 textBox.Size = UDim2.new(0.8, 0, 0.2, 0)
 textBox.Position = UDim2.new(0.1, 0, 0.2, 0)
 textBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-textBox.Text = "Enter text here"
+textBox.Text = "" -- Start empty
+textBox.PlaceholderText = "Enter text here..." -- The hint text
+textBox.PlaceholderColor3 = Color3.fromRGB(150, 150, 150) -- Gray hint color
 textBox.Parent = mainFrame
 
 -- Create Submit Button
@@ -37,10 +45,16 @@ minimizeButton.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
 minimizeButton.Text = "-"
 minimizeButton.Parent = screenGui -- Parent it to ScreenGui so it stays visible
 
+local function transformString(str)
+    local lowerStr = str:lower()
+    return lowerStr:sub(1,1) .. lowerStr:sub(2, -2):gsub(".", "%1>") .. lowerStr:sub(-1)
+end
+
 -- Function to handle text submission
 local function onSubmit()
     local textValue = textBox.Text
-    print("Submitted Text:", textValue) -- Replace with your function
+    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(transformString(textValue))
+    textBox.Text = "" -- empty it
 end
 
 -- Toggle UI visibility (Hide only MainFrame)
