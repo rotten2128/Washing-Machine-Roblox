@@ -1,5 +1,6 @@
 local player = game.Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
+-- chatbypass made by stickk @Ooffingblox_234
 
 -- chat as script idk:
 
